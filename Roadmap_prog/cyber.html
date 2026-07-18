@@ -435,6 +435,172 @@ body::before{
 }
 .rc-desc{font-size:.85rem;color:rgba(162,170,188,.55);line-height:1.7;}
 
+  /* ══════════════════════════════
+   PROMPT / BOOTCAMP CONTEXT
+══════════════════════════════ */
+.prompt-section{
+  padding:80px 0;
+  background:linear-gradient(180deg,#0a0e14,#050810,#0a0e14);
+  position:relative;
+}
+.prompt-section::before{
+  content:'';position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,255,159,.01) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,159,.01) 1px,transparent 1px);
+  background-size:30px 30px;pointer-events:none;
+}
+
+.prompt-header{
+  text-align:center;margin-bottom:50px;position:relative;z-index:2;
+}
+
+.prompt-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:20px;margin-bottom:30px;position:relative;z-index:2;
+}
+
+.prompt-card{
+  background:rgba(0,255,159,.02);
+  border:1px solid rgba(0,255,159,.08);
+  border-radius:10px;padding:24px;
+  transition:.3s;position:relative;overflow:hidden;
+}
+.prompt-card:hover{
+  border-color:rgba(0,255,159,.3);
+  transform:translateY(-3px);
+  box-shadow:0 10px 30px rgba(0,0,0,.3),0 0 15px rgba(0,255,159,.08);
+}
+.prompt-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,#00ff9f,#00d4ff);
+  transform:scaleX(0);transform-origin:left;transition:.4s;
+}
+.prompt-card:hover::before{transform:scaleX(1);}
+
+.prompt-card.full-width{grid-column:1/-1;}
+
+.pc-icon{
+  width:44px;height:44px;border-radius:8px;
+  background:rgba(0,255,159,.08);border:1px solid rgba(0,255,159,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;color:#00ff9f;margin-bottom:14px;
+}
+.pc-title{
+  font-family:'Rajdhani',sans-serif;
+  font-size:1.15rem;font-weight:600;color:#e6edf3;
+  margin-bottom:6px;
+}
+.pc-desc{
+  font-size:.88rem;color:rgba(162,170,188,.55);
+  line-height:1.8;margin-bottom:14px;
+}
+
+.pc-list{list-style:none;margin:0;padding:0;}
+.pc-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  padding:6px 0;font-family:'JetBrains Mono',monospace;
+  font-size:.73rem;color:rgba(162,170,188,.7);
+  border-bottom:1px solid rgba(0,255,159,.04);
+}
+.pc-list li:last-child{border-bottom:none;}
+.pc-list li i{color:#00ff9f;margin-top:3px;font-size:.6rem;flex-shrink:0;}
+
+.pc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.pc-tag{
+  padding:4px 12px;border-radius:3px;
+  background:rgba(0,255,159,.05);border:1px solid rgba(0,255,159,.12);
+  font-family:'JetBrains Mono',monospace;font-size:.63rem;
+  color:#00ff9f;
+}
+
+/* Terminal inside prompt */
+.prompt-terminal{
+  background:#050810;border:1px solid rgba(0,255,159,.2);
+  border-radius:8px;overflow:hidden;margin-top:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 30px rgba(0,255,159,.04);
+}
+.pt-header{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 16px;background:rgba(0,255,159,.03);
+  border-bottom:1px solid rgba(0,255,159,.1);
+}
+.pt-dot{width:10px;height:10px;border-radius:50%;}
+.pt-red{background:#ff5f57;}
+.pt-yel{background:#febc2e;}
+.pt-grn{background:#28c840;}
+.pt-title{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:rgba(0,255,159,.5);margin-left:8px;
+}
+.pt-body{
+  padding:18px;font-family:'JetBrains Mono',monospace;
+  font-size:.73rem;line-height:2;color:rgba(162,170,188,.7);
+}
+.pt-prompt{color:#00ff9f;}
+.pt-cmd{color:#e6edf3;}
+.pt-out{display:block;padding-left:10px;color:rgba(0,255,159,.5);}
+.pt-info{display:block;padding-left:10px;color:#00d4ff;}
+.pt-warn{display:block;padding-left:10px;color:#f59e0b;}
+
+/* Teaching Rules */
+.rules-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:10px;margin-top:14px;
+}
+.rule-item{
+  display:flex;align-items:center;gap:8px;
+  padding:10px 14px;border-radius:6px;
+  background:rgba(0,255,159,.02);border:1px solid rgba(0,255,159,.06);
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:rgba(162,170,188,.7);transition:.3s;
+}
+.rule-item:hover{border-color:rgba(0,255,159,.3);color:#00ff9f;}
+.rule-item i{color:#00ff9f;font-size:.65rem;width:16px;flex-shrink:0;}
+
+/* Progress Tracker */
+.progress-panel{
+  background:rgba(0,255,159,.02);border:1px solid rgba(0,255,159,.15);
+  border-radius:10px;overflow:hidden;margin-top:30px;
+  position:relative;z-index:2;
+}
+.pp-header{
+  padding:16px 24px;background:rgba(0,255,159,.04);
+  border-bottom:1px solid rgba(0,255,159,.1);
+  display:flex;align-items:center;justify-content:space-between;
+}
+.pp-label{
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  color:#00ff9f;letter-spacing:1px;
+}
+.pp-status{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:#00d4ff;
+}
+.pp-body{padding:20px 24px;}
+
+.pp-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 0;border-bottom:1px solid rgba(0,255,159,.04);
+}
+.pp-row:last-child{border-bottom:none;}
+.pp-row-label{
+  font-family:'JetBrains Mono',monospace;font-size:.73rem;
+  color:rgba(162,170,188,.6);display:flex;align-items:center;gap:8px;
+}
+.pp-row-label i{color:#00ff9f;font-size:.6rem;width:16px;}
+.pp-row-value{
+  font-family:'JetBrains Mono',monospace;font-size:.75rem;
+  color:#00ff9f;font-weight:700;
+}
+
+@media(max-width:768px){
+  .prompt-grid{grid-template-columns:1fr;}
+  .rules-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:480px){
+  .rules-grid{grid-template-columns:1fr;}
+}
 /* ══════════════════════════════
    FOOTER
 ══════════════════════════════ */
@@ -1592,9 +1758,286 @@ body::before{
   </div>
 </section>
 
+  <!-- ═══════════════════ BOOTCAMP CONTEXT ═══════════════════ -->
+<section class="prompt-section">
+  <div class="container">
+    <div class="prompt-header">
+      <div class="phase-num">Bootcamp Details</div>
+      <h2 class="phase-title">How This Bootcamp Works</h2>
+      <p style="font-size:1rem;color:rgba(162,170,188,.5);max-width:600px;margin:12px auto 0;line-height:1.8;">
+        A structured, mentor-guided cybersecurity bootcamp designed for 
+        maximum employability with real projects and hands-on labs.
+      </p>
+    </div>
+
+    <!-- Row 1 -->
+    <div class="prompt-grid">
+
+      <!-- Student Profile -->
+      <div class="prompt-card">
+        <div class="pc-icon"><i class="fas fa-user-graduate"></i></div>
+        <div class="pc-title">Student Profile</div>
+        <div class="pc-desc">Background and starting point of this bootcamp journey.</div>
+        <ul class="pc-list">
+          <li><i class="fas fa-check"></i> Software Engineering student (COMSATS University)</li>
+          <li><i class="fas fa-check"></i> CCNA certified (basic networking concepts)</li>
+          <li><i class="fas fa-check"></i> Programming fundamentals (Python, Java, Flutter)</li>
+          <li><i class="fas fa-check"></i> OOP, variables, functions, basic development</li>
+          <li><i class="fas fa-check"></i> Started with zero cybersecurity knowledge</li>
+        </ul>
+        <div class="pc-tags">
+          <span class="pc-tag">CS Student</span>
+          <span class="pc-tag">CCNA</span>
+          <span class="pc-tag">Python</span>
+          <span class="pc-tag">Java</span>
+        </div>
+      </div>
+
+      <!-- Bootcamp Structure -->
+      <div class="prompt-card">
+        <div class="pc-icon"><i class="fas fa-sitemap"></i></div>
+        <div class="pc-title">Bootcamp Structure</div>
+        <div class="pc-desc">Intensive program designed for real-world job readiness.</div>
+        <ul class="pc-list">
+          <li><i class="fas fa-check"></i> 6-month intensive (24 weeks)</li>
+          <li><i class="fas fa-check"></i> 2-3 hours daily focused study</li>
+          <li><i class="fas fa-check"></i> ~440 total hours of learning</li>
+          <li><i class="fas fa-check"></i> 5 Phases: Foundations to Job Ready</li>
+          <li><i class="fas fa-check"></i> 21 Modules covering all domains</li>
+          <li><i class="fas fa-check"></i> 12 Portfolio projects</li>
+          <li><i class="fas fa-check"></i> Project-based, industry-focused</li>
+        </ul>
+        <div class="pc-tags">
+          <span class="pc-tag">24 Weeks</span>
+          <span class="pc-tag">440+ Hours</span>
+          <span class="pc-tag">21 Modules</span>
+          <span class="pc-tag">12 Projects</span>
+        </div>
+      </div>
+
+      <!-- Lab Setup -->
+      <div class="prompt-card">
+        <div class="pc-icon"><i class="fas fa-server"></i></div>
+        <div class="pc-title">Lab Environment</div>
+        <div class="pc-desc">Personal cybersecurity lab for hands-on practice.</div>
+        <ul class="pc-list">
+          <li><i class="fas fa-check"></i> Windows 11 Host (Lenovo ThinkPad E590)</li>
+          <li><i class="fas fa-check"></i> 12GB RAM, 256GB SSD + 465GB HDD</li>
+          <li><i class="fas fa-check"></i> VMware Workstation Player (Free)</li>
+          <li><i class="fas fa-check"></i> Kali Linux VM (fully operational)</li>
+          <li><i class="fas fa-check"></i> Windows Defender exclusion configured</li>
+        </ul>
+        <div class="pc-tags">
+          <span class="pc-tag">VMware</span>
+          <span class="pc-tag">Kali Linux</span>
+          <span class="pc-tag">Windows 11</span>
+        </div>
+      </div>
+
+      <!-- Lab Platforms -->
+      <div class="prompt-card">
+        <div class="pc-icon"><i class="fas fa-flask"></i></div>
+        <div class="pc-title">Practice Platforms</div>
+        <div class="pc-desc">Free platforms used for hands-on labs and challenges.</div>
+        <ul class="pc-list">
+          <li><i class="fas fa-flag"></i> OverTheWire Bandit (Linux challenges)</li>
+          <li><i class="fas fa-flag"></i> TryHackMe (guided rooms)</li>
+          <li><i class="fas fa-flag"></i> HackTheBox (machines)</li>
+          <li><i class="fas fa-flag"></i> PortSwigger Academy (web security)</li>
+          <li><i class="fas fa-flag"></i> CyberDefenders (blue team)</li>
+          <li><i class="fas fa-flag"></i> PicoCTF (beginner CTF)</li>
+        </ul>
+        <div class="pc-tags">
+          <span class="pc-tag">OverTheWire</span>
+          <span class="pc-tag">TryHackMe</span>
+          <span class="pc-tag">HackTheBox</span>
+          <span class="pc-tag">PicoCTF</span>
+        </div>
+      </div>
+
+      <!-- Teaching Style -->
+      <div class="prompt-card full-width">
+        <div class="pc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+        <div class="pc-title">Teaching Methodology</div>
+        <div class="pc-desc">How every lesson is structured for maximum retention and practical understanding.</div>
+        <div class="rules-grid">
+          <div class="rule-item"><i class="fas fa-check"></i> Explain deeply but simply</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Always WHY before WHAT</div>
+          <div class="rule-item"><i class="fas fa-check"></i> ASCII diagrams for concepts</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Real-world analogies</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Quiz after every lesson</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Wrong answer = review + exercise</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Right answer = increase difficulty</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Connect to real attacks/defense</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Hands-on lab every session</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Portfolio project per module</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Track progress continuously</div>
+          <div class="rule-item"><i class="fas fa-check"></i> Optimize for employability</div>
+        </div>
+      </div>
+
+      <!-- Topics Covered -->
+      <div class="prompt-card full-width">
+        <div class="pc-icon"><i class="fas fa-th-list"></i></div>
+        <div class="pc-title">Complete Topic Coverage</div>
+        <div class="pc-desc">Every domain required for an entry-level cybersecurity role.</div>
+        <div class="rules-grid">
+          <div class="rule-item"><i class="fas fa-microchip"></i> Computer Fundamentals</div>
+          <div class="rule-item"><i class="fab fa-linux"></i> Linux Mastery</div>
+          <div class="rule-item"><i class="fab fa-windows"></i> Windows Internals</div>
+          <div class="rule-item"><i class="fas fa-terminal"></i> Bash Scripting</div>
+          <div class="rule-item"><i class="fas fa-terminal"></i> PowerShell</div>
+          <div class="rule-item"><i class="fab fa-python"></i> Python Security</div>
+          <div class="rule-item"><i class="fas fa-network-wired"></i> Networking / TCP/IP</div>
+          <div class="rule-item"><i class="fas fa-globe"></i> DNS / HTTP / HTTPS</div>
+          <div class="rule-item"><i class="fas fa-fire"></i> Firewalls / VPN</div>
+          <div class="rule-item"><i class="fas fa-search"></i> Wireshark / Nmap</div>
+          <div class="rule-item"><i class="fas fa-bug"></i> Burp Suite</div>
+          <div class="rule-item"><i class="fas fa-crosshairs"></i> Metasploit</div>
+          <div class="rule-item"><i class="fas fa-shield-alt"></i> OWASP Top 10</div>
+          <div class="rule-item"><i class="fas fa-database"></i> SQL Injection / XSS</div>
+          <div class="rule-item"><i class="fas fa-key"></i> Cryptography</div>
+          <div class="rule-item"><i class="fas fa-lock"></i> Authentication / Authorization</div>
+          <div class="rule-item"><i class="fas fa-sitemap"></i> Active Directory</div>
+          <div class="rule-item"><i class="fas fa-tv"></i> SIEM / SOC</div>
+          <div class="rule-item"><i class="fas fa-fingerprint"></i> Digital Forensics</div>
+          <div class="rule-item"><i class="fas fa-virus"></i> Malware Analysis</div>
+          <div class="rule-item"><i class="fas fa-binoculars"></i> Threat Hunting</div>
+          <div class="rule-item"><i class="fas fa-cloud"></i> Cloud Security</div>
+          <div class="rule-item"><i class="fab fa-docker"></i> Docker / K8s</div>
+          <div class="rule-item"><i class="fas fa-robot"></i> AI in Cybersecurity</div>
+          <div class="rule-item"><i class="fas fa-code"></i> Secure Coding</div>
+          <div class="rule-item"><i class="fas fa-arrow-up"></i> Linux Privilege Escalation</div>
+          <div class="rule-item"><i class="fas fa-arrow-up"></i> Windows Privilege Escalation</div>
+          <div class="rule-item"><i class="fas fa-chess"></i> Red Team / Blue Team</div>
+          <div class="rule-item"><i class="fas fa-flag-checkered"></i> CTF Training</div>
+          <div class="rule-item"><i class="fab fa-git-alt"></i> Git / Portfolio</div>
+        </div>
+      </div>
+
+      <!-- Portfolio Projects -->
+      <div class="prompt-card">
+        <div class="pc-icon"><i class="fas fa-folder-open"></i></div>
+        <div class="pc-title">Portfolio Projects</div>
+        <div class="pc-desc">12 projects building a strong GitHub portfolio for recruiters.</div>
+        <ul class="pc-list">
+          <li><i class="fas fa-check-circle" style="color:#00ff9f;"></i> Personal Cyber Lab Environment</li>
+          <li><i class="fas fa-spinner fa-spin" style="color:#00d4ff;"></i> Bash System Monitoring Script</li>
+          <li><i class="fas fa-lock"></i> PowerShell User Auditing Tool</li>
+          <li><i class="fas fa-lock"></i> Python Network Scanner</li>
+          <li><i class="fas fa-lock"></i> Secure Password Manager</li>
+          <li><i class="fas fa-lock"></i> Web Application Security Audit</li>
+          <li><i class="fas fa-lock"></i> Home SOC Lab + SIEM Dashboard</li>
+          <li><i class="fas fa-lock"></i> Vulnerability Assessment Report</li>
+          <li><i class="fas fa-lock"></i> Incident Response Report</li>
+          <li><i class="fas fa-lock"></i> Threat Hunt Report (MITRE ATT&CK)</li>
+          <li><i class="fas fa-lock"></i> CTF Writeups Collection</li>
+          <li><i class="fas fa-lock"></i> Red/Blue Team Capstone Report</li>
+        </ul>
+      </div>
+
+      <!-- Certifications -->
+      <div class="prompt-card">
+        <div class="pc-icon"><i class="fas fa-certificate"></i></div>
+        <div class="pc-title">Certification Readiness</div>
+        <div class="pc-desc">After completing this bootcamp, you will have the knowledge to pursue these certifications.</div>
+        <ul class="pc-list">
+          <li><i class="fas fa-award"></i> CompTIA Security+ (Entry)</li>
+          <li><i class="fas fa-award"></i> CompTIA Network+ (Entry)</li>
+          <li><i class="fas fa-award"></i> eJPT — eLearnSecurity (Entry-Mid)</li>
+          <li><i class="fas fa-award"></i> CEH — Certified Ethical Hacker (Mid)</li>
+          <li><i class="fas fa-award"></i> OSCP — Foundation built (Advanced)</li>
+        </ul>
+        <div class="pc-tags">
+          <span class="pc-tag">Security+</span>
+          <span class="pc-tag">eJPT</span>
+          <span class="pc-tag">CEH</span>
+          <span class="pc-tag">OSCP</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Terminal -->
+    <div class="prompt-terminal">
+      <div class="pt-header">
+        <span class="pt-dot pt-red"></span>
+        <span class="pt-dot pt-yel"></span>
+        <span class="pt-dot pt-grn"></span>
+        <span class="pt-title">bootcamp@ahmer:~$</span>
+      </div>
+      <div class="pt-body">
+        <div><span class="pt-prompt">$</span> <span class="pt-cmd">cat bootcamp_config.yml</span></div>
+        <span class="pt-out">duration: 24_weeks</span>
+        <span class="pt-out">daily_hours: 2-3</span>
+        <span class="pt-out">total_hours: 440+</span>
+        <span class="pt-out">modules: 21</span>
+        <span class="pt-out">projects: 12</span>
+        <span class="pt-out">goal: entry_level_cybersecurity</span>
+        <div><span class="pt-prompt">$</span> <span class="pt-cmd">systemctl status bootcamp</span></div>
+        <span class="pt-info">[+] Active: running since Week 1</span>
+        <span class="pt-info">[+] Module: 2/21 (Linux Mastery)</span>
+        <span class="pt-info">[+] Bandit: 12/34 levels cleared</span>
+        <span class="pt-info">[+] Projects: 1/12 completed</span>
+        <span class="pt-warn">[*] Job Readiness: 35%</span>
+        <span class="pt-out">[~] Next milestone: Module 8 (52%) - Start applying</span>
+        <div><span class="pt-prompt">$</span> <span class="pt-cmd">echo $TARGET</span></div>
+        <span class="pt-info">SOC Analyst | Junior Pentester | Security Engineer</span>
+      </div>
+    </div>
+
+    <!-- Progress Tracker -->
+    <div class="progress-panel">
+      <div class="pp-header">
+        <span class="pp-label"><i class="fas fa-chart-line"></i> Current Progress Tracker</span>
+        <span class="pp-status">Live Tracking</span>
+      </div>
+      <div class="pp-body">
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-cubes"></i> Modules Completed</span>
+          <span class="pp-row-value">1 / 21</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-calendar-day"></i> Current Module</span>
+          <span class="pp-row-value">Module 2 — Linux Mastery</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-flag"></i> Bandit Levels</span>
+          <span class="pp-row-value">12 / 34</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-flask"></i> Labs Completed</span>
+          <span class="pp-row-value">1 / 40+</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-folder-open"></i> Projects Completed</span>
+          <span class="pp-row-value">1 / 12</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-star"></i> Quiz Average</span>
+          <span class="pp-row-value">81%</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-bullseye"></i> Job Readiness</span>
+          <span class="pp-row-value">35%</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-clock"></i> Days Completed</span>
+          <span class="pp-row-value">10 / 180</span>
+        </div>
+        <div class="pp-row">
+          <span class="pp-row-label"><i class="fas fa-chart-line"></i> Trend</span>
+          <span class="pp-row-value" style="color:#00d4ff;">Improving</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══════════════════ FOOTER ═══════════════════ -->
 <div class="footer">
-  <p>Designed by <span>Ahmer Ijaz</span> &middot; 6-Month Cybersecurity Bootcamp Roadmap &middot; 2025</p>
+  <p>Designed by <span>Ahmer Ijaz</span> &middot; 6-Month Cybersecurity Bootcamp Roadmap &middot; 2026</p>
 </div>
 
 <script>
