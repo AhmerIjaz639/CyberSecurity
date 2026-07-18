@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersecurity Bootcamp — Complete Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Rajdhani',sans-serif;
+  background:#0a0e14;
+  color:#a2aabc;
+  overflow-x:hidden;
+}
+::selection{background:#00ff9f;color:#0a0e14;}
+
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(0,255,159,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,255,159,.02) 1px,transparent 1px);
+  background-size:50px 50px;z-index:-2;pointer-events:none;
+}
+
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:#0a0e14;}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#00ff9f,#00d4ff);border-radius:4px;}
+
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+/* ══════════════════════════════
+   HERO
+══════════════════════════════ */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  padding:40px 20px;
+}
+.hero-content{max-width:800px;}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;border-radius:30px;
+  background:rgba(0,255,159,.05);border:1px solid rgba(0,255,159,.2);
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:#00ff9f;letter-spacing:1px;margin-bottom:24px;
+}
+.hero-badge .dot{
+  width:8px;height:8px;border-radius:50%;background:#00ff9f;
+  box-shadow:0 0 12px #00ff9f;animation:pulse 2s infinite;
+}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.6;transform:scale(1.3);}}
+
+.hero h1{
+  font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;
+  line-height:1.1;color:#e6edf3;margin-bottom:16px;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,#00ff9f,#00d4ff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{
+  font-size:1.1rem;color:rgba(162,170,188,.6);
+  line-height:1.8;max-width:600px;margin:0 auto 32px;
+}
+
+.stats-row{
+  display:flex;justify-content:center;gap:30px;flex-wrap:wrap;
+  margin-bottom:40px;
+}
+.stat-item{
+  background:rgba(0,255,159,.03);border:1px solid rgba(0,255,159,.1);
+  border-radius:8px;padding:16px 24px;min-width:120px;
+  transition:.3s;
+}
+.stat-item:hover{border-color:#00ff9f;transform:translateY(-2px);}
+.stat-num{
+  font-family:'JetBrains Mono',monospace;font-size:1.8rem;
+  font-weight:700;color:#00ff9f;display:block;
+}
+.stat-label{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:rgba(162,170,188,.5);letter-spacing:1px;text-transform:uppercase;
+}
+
+.scroll-hint{
+  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:rgba(0,255,159,.4);animation:bounce 2s infinite;
+}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
+
+/* ══════════════════════════════
+   PHASE HEADER
+══════════════════════════════ */
+.phase-section{padding:60px 0;position:relative;}
+
+.phase-header{
+  text-align:center;margin-bottom:50px;padding:30px 20px;
+  background:linear-gradient(135deg,rgba(0,255,159,.05),rgba(0,212,255,.05));
+  border:1px solid rgba(0,255,159,.15);border-radius:12px;
+  position:relative;overflow:hidden;
+}
+.phase-header::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,#00ff9f,#00d4ff);
+}
+.phase-num{
+  font-family:'JetBrains Mono',monospace;font-size:.75rem;
+  color:#00ff9f;letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:8px;
+}
+.phase-title{
+  font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;
+  color:#e6edf3;margin-bottom:8px;
+}
+.phase-meta{
+  font-family:'JetBrains Mono',monospace;font-size:.8rem;
+  color:rgba(162,170,188,.5);
+}
+.phase-meta span{color:#00ff9f;}
+
+/* ══════════════════════════════
+   TIMELINE CONNECTOR
+══════════════════════════════ */
+.timeline-track{
+  position:relative;padding-left:40px;
+}
+.timeline-track::before{
+  content:'';position:absolute;left:18px;top:0;bottom:0;width:2px;
+  background:linear-gradient(180deg,#00ff9f,rgba(0,255,159,.1));
+  box-shadow:0 0 10px rgba(0,255,159,.2);
+}
+
+/* ══════════════════════════════
+   MODULE CARD
+══════════════════════════════ */
+.module-card{
+  position:relative;margin-bottom:30px;
+  background:rgba(0,255,159,.02);
+  border:1px solid rgba(0,255,159,.08);
+  border-radius:12px;overflow:hidden;
+  transition:.3s;
+}
+.module-card:hover{
+  border-color:rgba(0,255,159,.3);
+  box-shadow:0 10px 40px rgba(0,0,0,.3),0 0 20px rgba(0,255,159,.08);
+  transform:translateX(4px);
+}
+.module-card.completed{border-color:rgba(0,255,159,.4);}
+.module-card.completed::after{
+  content:'COMPLETED';position:absolute;top:16px;right:16px;
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:#0a0e14;background:#00ff9f;padding:3px 10px;
+  border-radius:3px;letter-spacing:1px;font-weight:700;
+}
+.module-card.active{border-color:#00d4ff;animation:activePulse 2s infinite;}
+@keyframes activePulse{
+  0%,100%{box-shadow:0 0 10px rgba(0,212,255,.1);}
+  50%{box-shadow:0 0 25px rgba(0,212,255,.2);}
+}
+.module-card.active::after{
+  content:'IN PROGRESS';position:absolute;top:16px;right:16px;
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:#0a0e14;background:#00d4ff;padding:3px 10px;
+  border-radius:3px;letter-spacing:1px;font-weight:700;
+}
+
+/* Timeline dot */
+.module-card::before{
+  content:'';position:absolute;left:-30px;top:24px;
+  width:14px;height:14px;border-radius:50%;
+  background:#0a0e14;border:2px solid rgba(0,255,159,.4);
+  z-index:2;
+}
+.module-card.completed::before{background:#00ff9f;border-color:#00ff9f;box-shadow:0 0 10px #00ff9f;}
+.module-card.active::before{background:#00d4ff;border-color:#00d4ff;box-shadow:0 0 10px #00d4ff;animation:pulse 2s infinite;}
+
+.mc-header{
+  padding:20px 24px;
+  background:rgba(0,255,159,.03);
+  border-bottom:1px solid rgba(0,255,159,.06);
+  display:flex;align-items:center;gap:16px;
+  cursor:pointer;
+}
+.mc-icon{
+  width:48px;height:48px;border-radius:10px;
+  background:rgba(0,255,159,.08);border:1px solid rgba(0,255,159,.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;color:#00ff9f;flex-shrink:0;
+}
+.mc-info{flex:1;}
+.mc-num{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:rgba(0,255,159,.5);letter-spacing:2px;margin-bottom:2px;
+}
+.mc-title{font-size:1.2rem;font-weight:600;color:#e6edf3;}
+.mc-duration{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:rgba(162,170,188,.5);margin-top:2px;
+}
+.mc-toggle{
+  width:32px;height:32px;border-radius:6px;
+  background:rgba(0,255,159,.05);border:1px solid rgba(0,255,159,.1);
+  display:flex;align-items:center;justify-content:center;
+  color:#00ff9f;font-size:.8rem;transition:.3s;cursor:pointer;
+}
+.mc-toggle.open{transform:rotate(180deg);}
+
+/* Module Body */
+.mc-body{
+  max-height:0;overflow:hidden;
+  transition:max-height .5s ease;
+}
+.mc-body.open{max-height:2000px;}
+.mc-content{padding:20px 24px;}
+
+/* Job Readiness Bar */
+.job-bar-wrap{margin:16px 0;}
+.job-bar-label{
+  display:flex;justify-content:space-between;
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  margin-bottom:6px;
+}
+.job-bar-label span:first-child{color:rgba(162,170,188,.6);}
+.job-bar-label span:last-child{color:#00ff9f;font-weight:700;}
+.job-bar{
+  height:6px;background:rgba(0,255,159,.05);
+  border-radius:3px;overflow:hidden;
+}
+.job-fill{
+  height:100%;border-radius:3px;
+  background:linear-gradient(90deg,#00ff9f,#00d4ff);
+  box-shadow:0 0 10px rgba(0,255,159,.4);
+  transition:width 1s ease;
+}
+
+/* Topics Grid */
+.topics-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:8px;margin:16px 0;
+}
+.topic-item{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 12px;border-radius:4px;
+  background:rgba(0,255,159,.02);border:1px solid rgba(0,255,159,.06);
+  font-family:'JetBrains Mono',monospace;font-size:.72rem;
+  color:rgba(162,170,188,.7);transition:.3s;
+}
+.topic-item:hover{border-color:rgba(0,255,159,.3);color:#00ff9f;}
+.topic-item i{color:#00ff9f;font-size:.6rem;width:14px;}
+
+/* Skills Tags */
+.skills-gained{
+  display:flex;flex-wrap:wrap;gap:6px;margin:12px 0;
+}
+.skill-tag{
+  padding:4px 12px;border-radius:3px;
+  background:rgba(0,255,159,.05);border:1px solid rgba(0,255,159,.12);
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:#00ff9f;
+}
+
+/* Job Roles */
+.roles-section{margin:16px 0;}
+.roles-label{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:rgba(162,170,188,.5);letter-spacing:1px;margin-bottom:8px;
+}
+.role-tag{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:4px;margin:3px;
+  background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.15);
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:#00d4ff;transition:.3s;
+}
+.role-tag:hover{background:rgba(0,212,255,.1);border-color:#00d4ff;}
+.role-tag i{font-size:.6rem;}
+
+/* Project Card */
+.project-mini{
+  margin:16px 0;padding:14px 18px;
+  background:rgba(0,255,159,.03);border:1px solid rgba(0,255,159,.1);
+  border-radius:6px;display:flex;align-items:center;gap:12px;
+}
+.project-mini i{color:#00ff9f;font-size:1.2rem;}
+.project-mini div{flex:1;}
+.project-mini .pm-title{
+  font-size:.9rem;font-weight:600;color:#e6edf3;
+}
+.project-mini .pm-desc{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:rgba(162,170,188,.5);margin-top:2px;
+}
+
+/* Labs */
+.labs-row{
+  display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;
+}
+.lab-item{
+  display:flex;align-items:center;gap:6px;
+  padding:6px 14px;border-radius:4px;
+  background:rgba(255,165,0,.05);border:1px solid rgba(255,165,0,.15);
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;
+  color:#f59e0b;
+}
+.lab-item i{font-size:.6rem;}
+
+/* Section Labels */
+.mc-section-label{
+  font-family:'JetBrains Mono',monospace;font-size:.65rem;
+  color:rgba(0,255,159,.5);letter-spacing:2px;text-transform:uppercase;
+  margin:16px 0 8px;display:flex;align-items:center;gap:8px;
+}
+.mc-section-label::after{
+  content:'';flex:1;height:1px;background:rgba(0,255,159,.1);
+}
+
+/* Milestone Banner */
+.milestone{
+  margin:20px 0;padding:16px 20px;
+  background:linear-gradient(135deg,rgba(0,255,159,.08),rgba(0,212,255,.05));
+  border:1px solid rgba(0,255,159,.25);border-radius:8px;
+  display:flex;align-items:center;gap:14px;
+  animation:milestoneGlow 3s infinite;
+}
+@keyframes milestoneGlow{
+  0%,100%{box-shadow:0 0 10px rgba(0,255,159,.1);}
+  50%{box-shadow:0 0 25px rgba(0,255,159,.2);}
+}
+.milestone i{font-size:1.5rem;color:#00ff9f;}
+.milestone-text{flex:1;}
+.milestone-title{font-size:1rem;font-weight:600;color:#e6edf3;}
+.milestone-desc{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:rgba(0,255,159,.6);margin-top:2px;
+}
+
+/* ══════════════════════════════
+   SUMMARY SECTION
+══════════════════════════════ */
+.summary-section{
+  padding:80px 0;
+  background:linear-gradient(180deg,#0a0e14,#050810,#0a0e14);
+}
+
+.summary-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;margin-top:40px;
+}
+.summary-card{
+  background:rgba(0,255,159,.02);border:1px solid rgba(0,255,159,.1);
+  border-radius:10px;padding:24px;text-align:center;transition:.3s;
+}
+.summary-card:hover{
+  border-color:#00ff9f;transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,255,159,.1);
+}
+.sc-icon{font-size:2.5rem;color:#00ff9f;margin-bottom:12px;}
+.sc-num{
+  font-family:'JetBrains Mono',monospace;font-size:2rem;
+  font-weight:700;color:#e6edf3;
+}
+.sc-label{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:rgba(162,170,188,.5);letter-spacing:1px;text-transform:uppercase;
+  margin-top:4px;
+}
+
+/* ══════════════════════════════
+   JOB READINESS CHART
+══════════════════════════════ */
+.chart-section{padding:60px 0;}
+.chart-grid{
+  display:grid;grid-template-columns:repeat(21,1fr);
+  gap:4px;margin-top:30px;align-items:end;height:300px;
+}
+.chart-bar{
+  background:linear-gradient(180deg,#00ff9f,rgba(0,255,159,.3));
+  border-radius:4px 4px 0 0;position:relative;
+  transition:height 1s ease;cursor:pointer;min-height:10px;
+}
+.chart-bar:hover{
+  background:linear-gradient(180deg,#00d4ff,rgba(0,212,255,.3));
+  box-shadow:0 0 15px rgba(0,212,255,.3);
+}
+.chart-bar .bar-label{
+  position:absolute;bottom:-28px;left:50%;transform:translateX(-50%);
+  font-family:'JetBrains Mono',monospace;font-size:.55rem;
+  color:rgba(162,170,188,.5);white-space:nowrap;
+}
+.chart-bar .bar-value{
+  position:absolute;top:-22px;left:50%;transform:translateX(-50%);
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:#00ff9f;font-weight:700;opacity:0;transition:.3s;
+}
+.chart-bar:hover .bar-value{opacity:1;}
+.chart-bar.completed-bar{
+  background:linear-gradient(180deg,#00ff9f,rgba(0,255,159,.5));
+  box-shadow:0 0 10px rgba(0,255,159,.3);
+}
+.chart-bar.active-bar{
+  background:linear-gradient(180deg,#00d4ff,rgba(0,212,255,.4));
+  box-shadow:0 0 10px rgba(0,212,255,.3);
+  animation:activePulse 2s infinite;
+}
+
+/* ══════════════════════════════
+   ROLES SECTION
+══════════════════════════════ */
+.roles-section-main{padding:60px 0;}
+.roles-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:16px;margin-top:30px;
+}
+.role-card{
+  background:rgba(0,255,159,.02);border:1px solid rgba(0,255,159,.08);
+  border-radius:10px;padding:20px;transition:.3s;
+}
+.role-card:hover{
+  border-color:#00ff9f;transform:translateY(-4px);
+  box-shadow:0 10px 30px rgba(0,255,159,.1);
+}
+.rc-icon{font-size:2rem;margin-bottom:12px;color:#00ff9f;}
+.rc-title{font-size:1.1rem;font-weight:600;color:#e6edf3;margin-bottom:4px;}
+.rc-ready{
+  font-family:'JetBrains Mono',monospace;font-size:.7rem;
+  color:#00d4ff;margin-bottom:10px;
+}
+.rc-desc{font-size:.85rem;color:rgba(162,170,188,.55);line-height:1.7;}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+.footer{
+  padding:30px 20px;border-top:1px solid rgba(0,255,159,.1);
+  text-align:center;background:#050810;
+}
+.footer p{
+  font-family:'JetBrains Mono',monospace;font-size:.75rem;
+  color:rgba(162,170,188,.4);
+}
+.footer span{color:#00ff9f;}
+
+/* ══════════════════════════════
+   RESPONSIVE
+══════════════════════════════ */
+@media(max-width:768px){
+  .timeline-track{padding-left:30px;}
+  .timeline-track::before{left:12px;}
+  .module-card::before{left:-24px;width:10px;height:10px;}
+  .chart-grid{grid-template-columns:repeat(7,1fr);height:200px;}
+  .chart-bar .bar-label{font-size:.45rem;}
+  .topics-grid{grid-template-columns:1fr;}
+  .stats-row{gap:12px;}
+  .stat-item{min-width:90px;padding:12px 16px;}
+  .stat-num{font-size:1.4rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════ HERO ═══════════════════ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      6-MONTH INTENSIVE BOOTCAMP
+    </div>
+    <h1>Cybersecurity<br><span>Career Roadmap</span></h1>
+    <p>From zero cybersecurity knowledge to job-ready professional. 21 modules, 12 projects, 440+ hours of focused learning.</p>
+    
+    <div class="stats-row">
+      <div class="stat-item">
+        <span class="stat-num">21</span>
+        <span class="stat-label">Modules</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">12</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">440+</span>
+        <span class="stat-label">Hours</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">24</span>
+        <span class="stat-label">Weeks</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">92%</span>
+        <span class="stat-label">Job Ready</span>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <i class="fas fa-chevron-down"></i> Scroll to explore roadmap
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PHASE 1 ═══════════════════ -->
+<section class="phase-section">
+  <div class="container">
+    <div class="phase-header">
+      <div class="phase-num">Phase 01</div>
+      <h2 class="phase-title">Foundations</h2>
+      <div class="phase-meta">Weeks 1-6 &middot; <span>~90 Hours</span> &middot; Modules 1-4</div>
+    </div>
+
+    <div class="timeline-track">
+
+      <!-- MODULE 1 -->
+      <div class="module-card completed" id="m1">
+        <div class="mc-header" onclick="toggleModule('m1')">
+          <div class="mc-icon"><i class="fas fa-microchip"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 01</div>
+            <div class="mc-title">Computer & OS Fundamentals</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 1 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m1"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m1">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label">
+                <span>Job Readiness After Completion</span>
+                <span>5%</span>
+              </div>
+              <div class="job-bar"><div class="job-fill" style="width:5%"></div></div>
+            </div>
+
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-check"></i> CPU, RAM, Storage (security view)</div>
+              <div class="topic-item"><i class="fas fa-check"></i> CPU Rings (Ring 0 vs Ring 3)</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Privilege Escalation concept</div>
+              <div class="topic-item"><i class="fas fa-check"></i> RAM attacks (Mimikatz)</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Storage forensics (HDD vs SSD)</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Virtualization & VM setup</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Linux filesystem structure</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Linux permissions (rwx, SUID)</div>
+              <div class="topic-item"><i class="fas fa-check"></i> File systems (NTFS, ext4, FAT32)</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Boot process & boot attacks</div>
+              <div class="topic-item"><i class="fas fa-check"></i> OS security model</div>
+              <div class="topic-item"><i class="fas fa-check"></i> WannaCry attack chain analysis</div>
+            </div>
+
+            <div class="mc-section-label">Skills Gained</div>
+            <div class="skills-gained">
+              <span class="skill-tag">Virtualization</span>
+              <span class="skill-tag">VMware</span>
+              <span class="skill-tag">Kali Linux</span>
+              <span class="skill-tag">Linux Basics</span>
+              <span class="skill-tag">Permissions</span>
+              <span class="skill-tag">SUID</span>
+              <span class="skill-tag">File Systems</span>
+              <span class="skill-tag">Boot Process</span>
+            </div>
+
+            <div class="mc-section-label">Lab Platform</div>
+            <div class="labs-row">
+              <div class="lab-item"><i class="fas fa-flask"></i> TryHackMe Pre-Security</div>
+              <div class="lab-item"><i class="fas fa-flask"></i> VMware Lab Setup</div>
+            </div>
+
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-folder-open"></i>
+              <div>
+                <div class="pm-title">Personal Cyber Lab Environment</div>
+                <div class="pm-desc">Documented VMware + Kali setup with architecture diagram</div>
+              </div>
+            </div>
+
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-times-circle"></i> Not enough for any role yet</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 2 -->
+      <div class="module-card active" id="m2">
+        <div class="mc-header" onclick="toggleModule('m2')">
+          <div class="mc-icon"><i class="fab fa-linux"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 02</div>
+            <div class="mc-title">Linux Mastery</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Weeks 2-3 &middot; ~25 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m2"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m2">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label">
+                <span>Job Readiness After Completion</span>
+                <span>15%</span>
+              </div>
+              <div class="job-bar"><div class="job-fill" style="width:15%"></div></div>
+            </div>
+
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-check"></i> Linux filesystem deep dive</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Essential commands mastery</div>
+              <div class="topic-item"><i class="fas fa-check"></i> Users, groups, permissions</div>
+              <div class="topic-item"><i class="fas fa-spinner fa-spin"></i> Process & system monitoring</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Package management (apt)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Networking commands</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Text processing (awk, sed)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Bash scripting basics</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Advanced Bash scripting</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Cron jobs & services</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Linux hardening</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Lab day + project</div>
+            </div>
+
+            <div class="mc-section-label">Skills Gained</div>
+            <div class="skills-gained">
+              <span class="skill-tag">Linux CLI</span>
+              <span class="skill-tag">Bash Scripting</span>
+              <span class="skill-tag">Process Monitoring</span>
+              <span class="skill-tag">Log Analysis</span>
+              <span class="skill-tag">System Hardening</span>
+              <span class="skill-tag">User Management</span>
+              <span class="skill-tag">Text Processing</span>
+            </div>
+
+            <div class="mc-section-label">Lab Platform</div>
+            <div class="labs-row">
+              <div class="lab-item"><i class="fas fa-flag"></i> OverTheWire Bandit (0-25)</div>
+              <div class="lab-item"><i class="fas fa-flask"></i> Kali Linux Exercises</div>
+            </div>
+
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-terminal"></i>
+              <div>
+                <div class="pm-title">Bash System Monitoring Script</div>
+                <div class="pm-desc">Automated system recon and health check tool</div>
+              </div>
+            </div>
+
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-server"></i> Junior Linux Admin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 3 -->
+      <div class="module-card" id="m3">
+        <div class="mc-header" onclick="toggleModule('m3')">
+          <div class="mc-icon"><i class="fab fa-windows"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 03</div>
+            <div class="mc-title">Windows Internals & PowerShell</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 4 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m3"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m3">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>22%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:22%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Windows Registry & SAM</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Critical processes (lsass, svchost)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Windows Event Logs & IDs</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> PowerShell fundamentals</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> PowerShell for security</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> NTFS security & ADS</div>
+            </div>
+            <div class="mc-section-label">Skills Gained</div>
+            <div class="skills-gained">
+              <span class="skill-tag">Windows Internals</span>
+              <span class="skill-tag">PowerShell</span>
+              <span class="skill-tag">Event Log Analysis</span>
+              <span class="skill-tag">Registry Analysis</span>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-users-cog"></i>
+              <div>
+                <div class="pm-title">PowerShell User Auditing Tool</div>
+                <div class="pm-desc">Automated user and group security audit script</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-headset"></i> Security Helpdesk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 4 -->
+      <div class="module-card" id="m4">
+        <div class="mc-header" onclick="toggleModule('m4')">
+          <div class="mc-icon"><i class="fas fa-network-wired"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 04</div>
+            <div class="mc-title">Networking & Protocols</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Weeks 5-6 &middot; ~25 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m4"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m4">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>30%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:30%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> OSI Model (all 7 layers)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> TCP/IP deep dive</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> IP addressing & subnetting</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> DNS resolution</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> HTTP/HTTPS protocols</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> FTP, SSH, SMTP, DHCP</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Firewalls, NAT, Proxies</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> VPN types & usage</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Wireshark packet analysis</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Nmap scanning & enumeration</div>
+            </div>
+            <div class="mc-section-label">Skills Gained</div>
+            <div class="skills-gained">
+              <span class="skill-tag">TCP/IP</span>
+              <span class="skill-tag">DNS</span>
+              <span class="skill-tag">Wireshark</span>
+              <span class="skill-tag">Nmap</span>
+              <span class="skill-tag">Firewalls</span>
+              <span class="skill-tag">VPN</span>
+              <span class="skill-tag">HTTP/HTTPS</span>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-search"></i>
+              <div>
+                <div class="pm-title">Python Network Scanner</div>
+                <div class="pm-desc">Nmap wrapper with automated reporting</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-desktop"></i> NOC Analyst</span>
+              <span class="role-tag"><i class="fas fa-shield-alt"></i> Network Security Junior</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PHASE 2 ═══════════════════ -->
+<section class="phase-section">
+  <div class="container">
+    <div class="phase-header">
+      <div class="phase-num">Phase 02</div>
+      <h2 class="phase-title">Core Skills</h2>
+      <div class="phase-meta">Weeks 7-13 &middot; <span>~120 Hours</span> &middot; Modules 5-10</div>
+    </div>
+
+    <div class="timeline-track">
+
+      <!-- MODULE 5 -->
+      <div class="module-card" id="m5">
+        <div class="mc-header" onclick="toggleModule('m5')">
+          <div class="mc-icon"><i class="fab fa-python"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 05</div>
+            <div class="mc-title">Python for Cybersecurity</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 7 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m5"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m5">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>35%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:35%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Socket programming</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> File handling for forensics</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> HTTP requests automation</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Building security tools</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Log parser automation</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-crosshairs"></i>
+              <div>
+                <div class="pm-title">Port Scanner + Banner Grabber</div>
+                <div class="pm-desc">Custom Python network reconnaissance tool</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-robot"></i> Security Automation Junior</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 6 -->
+      <div class="module-card" id="m6">
+        <div class="mc-header" onclick="toggleModule('m6')">
+          <div class="mc-icon"><i class="fab fa-git-alt"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 06</div>
+            <div class="mc-title">Git & Portfolio Setup</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> 2 Days &middot; ~5 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m6"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m6">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>37%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:37%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Git workflow (clone, commit, push)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Branching strategy</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> GitHub portfolio optimization</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Professional README writing</div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-eye"></i> Visible to Recruiters</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 7 -->
+      <div class="module-card" id="m7">
+        <div class="mc-header" onclick="toggleModule('m7')">
+          <div class="mc-icon"><i class="fas fa-key"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 07</div>
+            <div class="mc-title">Cryptography</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 8 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m7"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m7">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>42%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:42%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Symmetric encryption (AES, DES)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Asymmetric encryption (RSA)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Hashing (MD5, SHA-256, bcrypt)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> TLS/SSL deep dive</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> PKI & Digital signatures</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-lock"></i>
+              <div>
+                <div class="pm-title">Secure Password Manager</div>
+                <div class="pm-desc">Python password manager with AES encryption</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-cogs"></i> Junior Security Engineer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 8 -->
+      <div class="module-card" id="m8">
+        <div class="mc-header" onclick="toggleModule('m8')">
+          <div class="mc-icon"><i class="fas fa-globe"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 08</div>
+            <div class="mc-title">Web Security & OWASP Top 10</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Weeks 9-10 &middot; ~25 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m8"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m8">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>52%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:52%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> OWASP Top 10 overview</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> SQL Injection (attack + defense)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> XSS (reflected, stored, DOM)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Authentication attacks</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> IDOR, CSRF, SSRF, XXE</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Burp Suite complete</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-file-alt"></i>
+              <div>
+                <div class="pm-title">Web Application Security Audit Report</div>
+                <div class="pm-desc">Full vulnerability assessment with findings and remediation</div>
+              </div>
+            </div>
+
+            <div class="milestone">
+              <i class="fas fa-star"></i>
+              <div class="milestone-text">
+                <div class="milestone-title">First Major Milestone</div>
+                <div class="milestone-desc">Start applying for junior web security and bug bounty roles</div>
+              </div>
+            </div>
+
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-bug"></i> Junior Web Pentester</span>
+              <span class="role-tag"><i class="fas fa-shield-alt"></i> AppSec Analyst</span>
+              <span class="role-tag"><i class="fas fa-search"></i> Bug Bounty Hunter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 9 -->
+      <div class="module-card" id="m9">
+        <div class="mc-header" onclick="toggleModule('m9')">
+          <div class="mc-icon"><i class="fas fa-sitemap"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 09</div>
+            <div class="mc-title">Active Directory</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Weeks 11-12 &middot; ~25 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m9"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m9">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>58%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:58%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> AD architecture</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Domain, DC, OU, GPO</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Kerberos authentication</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> LDAP basics</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> AD enumeration</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Pass the Hash / Ticket</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Kerberoasting</div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-user-shield"></i> Junior Pentester</span>
+              <span class="role-tag"><i class="fas fa-eye"></i> SOC Analyst Tier 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 10 -->
+      <div class="module-card" id="m10">
+        <div class="mc-header" onclick="toggleModule('m10')">
+          <div class="mc-icon"><i class="fas fa-tv"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 10</div>
+            <div class="mc-title">Blue Team: SOC & SIEM</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 13 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m10"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m10">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>65%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:65%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> SOC Tier 1, 2, 3 operations</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> SIEM (Splunk/ELK)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Log analysis (Win + Linux)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Detection rules & alerts</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Alert triage workflow</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-chart-bar"></i>
+              <div>
+                <div class="pm-title">Home SOC Lab + SIEM Dashboard</div>
+                <div class="pm-desc">Splunk/ELK setup with custom detection rules</div>
+              </div>
+            </div>
+
+            <div class="milestone">
+              <i class="fas fa-trophy"></i>
+              <div class="milestone-text">
+                <div class="milestone-title">Second Major Milestone</div>
+                <div class="milestone-desc">Apply for SOC Analyst Tier 1 and L1 Security roles now</div>
+              </div>
+            </div>
+
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-tv"></i> SOC Analyst Tier 1</span>
+              <span class="role-tag"><i class="fas fa-shield-alt"></i> L1 Security Analyst</span>
+              <span class="role-tag"><i class="fas fa-clipboard-list"></i> Security Operations</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PHASE 3 ═══════════════════ -->
+<section class="phase-section">
+  <div class="container">
+    <div class="phase-header">
+      <div class="phase-num">Phase 03</div>
+      <h2 class="phase-title">Offense & Defense</h2>
+      <div class="phase-meta">Weeks 14-19 &middot; <span>~110 Hours</span> &middot; Modules 11-15</div>
+    </div>
+
+    <div class="timeline-track">
+
+      <!-- MODULE 11 -->
+      <div class="module-card" id="m11">
+        <div class="mc-header" onclick="toggleModule('m11')">
+          <div class="mc-icon"><i class="fas fa-crosshairs"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 11</div>
+            <div class="mc-title">Penetration Testing Methodology</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Weeks 14-15 &middot; ~20 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m11"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m11">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>72%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:72%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Pentest lifecycle</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> OSINT & passive recon</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Nmap advanced scanning</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Vulnerability scanning</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Metasploit framework</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Post-exploitation</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Linux privilege escalation</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Windows privilege escalation</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-file-alt"></i>
+              <div>
+                <div class="pm-title">Vulnerability Assessment Report</div>
+                <div class="pm-desc">Full pentest with professional documentation</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-user-secret"></i> Junior Pentester</span>
+              <span class="role-tag"><i class="fas fa-search"></i> Vulnerability Analyst</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 12 -->
+      <div class="module-card" id="m12">
+        <div class="mc-header" onclick="toggleModule('m12')">
+          <div class="mc-icon"><i class="fas fa-skull-crossbones"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 12</div>
+            <div class="mc-title">Active Directory Attacks Advanced</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 16 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m12"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m12">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>75%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:75%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> BloodHound attack paths</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> DCSync attack</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Golden / Silver Ticket</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> AD persistence</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> AD defense strategies</div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-shield-alt"></i> Mid-level Pentester target</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 13 -->
+      <div class="module-card" id="m13">
+        <div class="mc-header" onclick="toggleModule('m13')">
+          <div class="mc-icon"><i class="fas fa-search-plus"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 13</div>
+            <div class="mc-title">Digital Forensics & Incident Response</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 17 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m13"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m13">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>78%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:78%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Chain of custody</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Disk forensics (Autopsy)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Memory forensics (Volatility)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Network forensics (PCAP)</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> IR playbooks</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-file-medical"></i>
+              <div>
+                <div class="pm-title">Incident Response Report</div>
+                <div class="pm-desc">Complete IR investigation with evidence and timeline</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-fingerprint"></i> DFIR Analyst (Junior)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 14 -->
+      <div class="module-card" id="m14">
+        <div class="mc-header" onclick="toggleModule('m14')">
+          <div class="mc-icon"><i class="fas fa-virus"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 14</div>
+            <div class="mc-title">Malware Analysis Basics</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 18 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m14"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m14">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>80%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:80%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Malware types</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Static analysis</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Dynamic analysis</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> YARA rules</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Malware defense</div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-virus"></i> Junior Malware Analyst</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 15 -->
+      <div class="module-card" id="m15">
+        <div class="mc-header" onclick="toggleModule('m15')">
+          <div class="mc-icon"><i class="fas fa-binoculars"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 15</div>
+            <div class="mc-title">Threat Hunting</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 19 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m15"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m15">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>82%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:82%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Threat intelligence</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> IOCs and TTPs</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> MITRE ATT&CK framework</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Threat hunting with SIEM</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Detection rule building</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-crosshairs"></i>
+              <div>
+                <div class="pm-title">Threat Hunt Report</div>
+                <div class="pm-desc">MITRE ATT&CK mapped threat hunting exercise</div>
+              </div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-binoculars"></i> Junior Threat Hunter</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PHASE 4 ═══════════════════ -->
+<section class="phase-section">
+  <div class="container">
+    <div class="phase-header">
+      <div class="phase-num">Phase 04</div>
+      <h2 class="phase-title">Advanced Topics</h2>
+      <div class="phase-meta">Weeks 20-22 &middot; <span>~70 Hours</span> &middot; Modules 16-19</div>
+    </div>
+
+    <div class="timeline-track">
+
+      <!-- MODULE 16 -->
+      <div class="module-card" id="m16">
+        <div class="mc-header" onclick="toggleModule('m16')">
+          <div class="mc-icon"><i class="fas fa-cloud"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 16</div>
+            <div class="mc-title">Cloud Security</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 20 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m16"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m16">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>84%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:84%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> AWS / Azure / GCP basics</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Shared responsibility model</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> IAM security</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Cloud misconfigurations</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Cloud attack scenarios</div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-cloud"></i> Junior Cloud Security</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 17 -->
+      <div class="module-card" id="m17">
+        <div class="mc-header" onclick="toggleModule('m17')">
+          <div class="mc-icon"><i class="fab fa-docker"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 17</div>
+            <div class="mc-title">Docker & Kubernetes Security</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 21 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m17"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m17">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>85%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:85%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Docker security</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Container escape</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Kubernetes architecture</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> K8s misconfigurations</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Container hardening</div>
+            </div>
+            <div class="mc-section-label">Possible Roles After This</div>
+            <div class="roles-section">
+              <span class="role-tag"><i class="fas fa-cogs"></i> DevSecOps Awareness</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 18 -->
+      <div class="module-card" id="m18">
+        <div class="mc-header" onclick="toggleModule('m18')">
+          <div class="mc-icon"><i class="fas fa-code"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 18</div>
+            <div class="mc-title">Secure Coding + AI in Cybersecurity</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 22 &middot; ~15 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m18"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m18">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>86%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:86%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Secure coding principles</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Code review for vulnerabilities</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> AI-powered attacks</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> AI tools for security</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 19 -->
+      <div class="module-card" id="m19">
+        <div class="mc-header" onclick="toggleModule('m19')">
+          <div class="mc-icon"><i class="fas fa-flag-checkered"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 19</div>
+            <div class="mc-title">CTF Training</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 22 (Parallel) &middot; ~20 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m19"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m19">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>87%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:87%"></div></div>
+            </div>
+            <div class="mc-section-label">Platforms</div>
+            <div class="labs-row">
+              <div class="lab-item"><i class="fas fa-flag"></i> PicoCTF</div>
+              <div class="lab-item"><i class="fas fa-flag"></i> HackTheBox</div>
+              <div class="lab-item"><i class="fas fa-flag"></i> TryHackMe</div>
+            </div>
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-pen"></i>
+              <div>
+                <div class="pm-title">CTF Writeups Collection</div>
+                <div class="pm-desc">Published solutions with methodology explanation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PHASE 5 ═══════════════════ -->
+<section class="phase-section">
+  <div class="container">
+    <div class="phase-header">
+      <div class="phase-num">Phase 05</div>
+      <h2 class="phase-title">Job Ready</h2>
+      <div class="phase-meta">Weeks 23-24 &middot; <span>~50 Hours</span> &middot; Modules 20-21</div>
+    </div>
+
+    <div class="timeline-track">
+
+      <!-- MODULE 20 -->
+      <div class="module-card" id="m20">
+        <div class="mc-header" onclick="toggleModule('m20')">
+          <div class="mc-icon"><i class="fas fa-chess"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 20</div>
+            <div class="mc-title">Red Team vs Blue Team Capstone</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 23 &middot; ~20 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m20"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m20">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>90%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:90%"></div></div>
+            </div>
+            <div class="mc-section-label">Description</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Full attack simulation</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Defend your own attack</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Pentest report writing</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> IR report writing</div>
+            </div>
+
+            <div class="milestone">
+              <i class="fas fa-crown"></i>
+              <div class="milestone-text">
+                <div class="milestone-title">Biggest Milestone</div>
+                <div class="milestone-desc">Portfolio complete — apply for any entry-level cybersecurity role</div>
+              </div>
+            </div>
+
+            <div class="mc-section-label">Portfolio Project</div>
+            <div class="project-mini">
+              <i class="fas fa-chess-king"></i>
+              <div>
+                <div class="pm-title">Red/Blue Team Capstone Report</div>
+                <div class="pm-desc">Complete offensive + defensive exercise documentation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 21 -->
+      <div class="module-card" id="m21">
+        <div class="mc-header" onclick="toggleModule('m21')">
+          <div class="mc-icon"><i class="fas fa-briefcase"></i></div>
+          <div class="mc-info">
+            <div class="mc-num">MODULE 21</div>
+            <div class="mc-title">Interview Preparation</div>
+            <div class="mc-duration"><i class="far fa-clock"></i> Week 24 &middot; ~30 Hours</div>
+          </div>
+          <div class="mc-toggle" id="toggle-m21"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="mc-body" id="body-m21">
+          <div class="mc-content">
+            <div class="job-bar-wrap">
+              <div class="job-bar-label"><span>Job Readiness After Completion</span><span>92%</span></div>
+              <div class="job-bar"><div class="job-fill" style="width:92%"></div></div>
+            </div>
+            <div class="mc-section-label">Topics Covered</div>
+            <div class="topics-grid">
+              <div class="topic-item"><i class="fas fa-lock"></i> Resume building</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> LinkedIn optimization</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Technical mock interviews</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Behavioral interview prep</div>
+              <div class="topic-item"><i class="fas fa-lock"></i> Final portfolio review</div>
+            </div>
+
+            <div class="milestone">
+              <i class="fas fa-rocket"></i>
+              <div class="milestone-text">
+                <div class="milestone-title">Bootcamp Complete</div>
+                <div class="milestone-desc">You are ready for entry-level cybersecurity roles</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SUMMARY ═══════════════════ -->
+<section class="summary-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="phase-num">Summary</div>
+      <h2 class="phase-title">Bootcamp Overview</h2>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-card">
+        <div class="sc-icon"><i class="fas fa-layer-group"></i></div>
+        <div class="sc-num">5</div>
+        <div class="sc-label">Phases</div>
+      </div>
+      <div class="summary-card">
+        <div class="sc-icon"><i class="fas fa-cubes"></i></div>
+        <div class="sc-num">21</div>
+        <div class="sc-label">Modules</div>
+      </div>
+      <div class="summary-card">
+        <div class="sc-icon"><i class="fas fa-folder-open"></i></div>
+        <div class="sc-num">12</div>
+        <div class="sc-label">Projects</div>
+      </div>
+      <div class="summary-card">
+        <div class="sc-icon"><i class="fas fa-clock"></i></div>
+        <div class="sc-num">440+</div>
+        <div class="sc-label">Hours</div>
+      </div>
+      <div class="summary-card">
+        <div class="sc-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="sc-num">24</div>
+        <div class="sc-label">Weeks</div>
+      </div>
+      <div class="summary-card">
+        <div class="sc-icon"><i class="fas fa-bullseye"></i></div>
+        <div class="sc-num">92%</div>
+        <div class="sc-label">Job Ready</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ROLES SECTION ═══════════════════ -->
+<section class="roles-section-main">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px;">
+      <div class="phase-num">Career Paths</div>
+      <h2 class="phase-title">Roles You Can Target</h2>
+    </div>
+
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-tv"></i></div>
+        <div class="rc-title">SOC Analyst (Tier 1)</div>
+        <div class="rc-ready">Ready after Module 10 (65%)</div>
+        <div class="rc-desc">Monitor security alerts, analyze logs, triage incidents in a Security Operations Center.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-user-secret"></i></div>
+        <div class="rc-title">Junior Penetration Tester</div>
+        <div class="rc-ready">Ready after Module 11 (72%)</div>
+        <div class="rc-desc">Conduct authorized security assessments to find vulnerabilities in systems and applications.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-bug"></i></div>
+        <div class="rc-title">Vulnerability Analyst</div>
+        <div class="rc-ready">Ready after Module 11 (72%)</div>
+        <div class="rc-desc">Scan, identify, and prioritize security vulnerabilities across organizational infrastructure.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-globe"></i></div>
+        <div class="rc-title">Web Security Analyst</div>
+        <div class="rc-ready">Ready after Module 8 (52%)</div>
+        <div class="rc-desc">Test web applications for OWASP Top 10 vulnerabilities and ensure secure deployment.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-fingerprint"></i></div>
+        <div class="rc-title">DFIR Analyst</div>
+        <div class="rc-ready">Ready after Module 13 (78%)</div>
+        <div class="rc-desc">Investigate security incidents, perform forensic analysis, and document findings.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-binoculars"></i></div>
+        <div class="rc-title">Threat Hunter</div>
+        <div class="rc-ready">Ready after Module 15 (82%)</div>
+        <div class="rc-desc">Proactively search for hidden threats using MITRE ATT&CK framework and SIEM tools.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-cloud"></i></div>
+        <div class="rc-title">Cloud Security Analyst</div>
+        <div class="rc-ready">Ready after Module 16 (84%)</div>
+        <div class="rc-desc">Secure cloud infrastructure and monitor for misconfigurations and threats.</div>
+      </div>
+      <div class="role-card">
+        <div class="rc-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="rc-title">Security Engineer</div>
+        <div class="rc-ready">Ready after Module 20 (90%)</div>
+        <div class="rc-desc">Design, implement, and manage security solutions across the organization.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+  <p>Designed by <span>Ahmer Ijaz</span> &middot; 6-Month Cybersecurity Bootcamp Roadmap &middot; 2025</p>
+</div>
+
+<script>
+function toggleModule(id){
+  const body = document.getElementById('body-'+id);
+  const toggle = document.getElementById('toggle-'+id);
+  body.classList.toggle('open');
+  toggle.classList.toggle('open');
+}
+
+// Reveal on scroll
+function revealOnScroll(){
+  document.querySelectorAll('.module-card,.summary-card,.role-card,.phase-header,.milestone').forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight - 60){
+      el.style.opacity='1';
+      el.style.transform='translateY(0)';
+    }
+  });
+}
+
+// Initial state
+document.querySelectorAll('.module-card,.summary-card,.role-card,.phase-header').forEach(el=>{
+  el.style.opacity='0';
+  el.style.transform='translateY(20px)';
+  el.style.transition='opacity .6s ease, transform .6s ease';
+});
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+</body>
+</html>
