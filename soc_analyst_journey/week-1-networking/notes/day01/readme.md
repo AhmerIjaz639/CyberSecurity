@@ -1,9 +1,9 @@
 #  Day 1 — Network Devices, OSI Model & TCP/IP Model
 
 > **SOC Analyst Journey · Week 1 · Networking Foundations**
-> Lab: Kali/Ubuntu (VMware) · Resource: Jeremy's IT Lab (Days 1–3)
+> Lab: Kali/Ubuntu (VMware) 
 
-[Next: Day 2 →](../day-02/README.md)
+
 
 ---
 
@@ -277,4 +277,3 @@ Packet.
 - 169.254.x.x = DHCP failure (APIPA).
 - Knowing the layer tells you where to troubleshoot *and* where to detect an attack.
 
-[Next: Day 2 — TCP vs UDP & Subnetting →](../day-02/README.md)
