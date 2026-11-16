@@ -26,9 +26,22 @@ Scores are the ratings I got in my practice reviews, rounded. They show where I 
 | 9 | [SMB and FTP Analysis](section-09-smb-ftp/README.md) | 96 | Done |
 | 10 | [Malicious Traffic Analysis](section-10-malicious-traffic/README.md) | 90 | Done |
 | 11 | [Statistics and Expert Info](section-11-statistics/README.md) | 70 | Done |
-| 12 | [Capstone: Operation Midnight Invoice](section-12-capstone-operation-midnight-invoice/README.md) | 86 | Done |
+| 12 | [Capstone: Operation Midnight Invoice](section-12-capstone-operation-midnight-invoice/README.md) | 80 | Done |
 
 Average of the scored sections (2 to 12): about 84 percent.
+
+## Bootcamp progress tracker
+
+```
+Theory:             ███████░░░ 70%
+Practical:          ███████░░░ 70%
+Troubleshooting:    ██████░░░░ 60%
+Interview:          ██████░░░░ 60%
+Cybersecurity:      ███████░░░ 70%
+Scripting (SOC):    ██░░░░░░░░ 20%
+
+Wireshark Packet Analysis Skill: 80% (SOC Ready!)
+```
 
 ## Performance summary
 
@@ -59,7 +72,7 @@ Things I did not know on my first attempt, now written up:
 
 A full investigation of a simulated breach at Company XYZ. A finance workstation downloaded a fake invoice update, opened a reverse shell, probed an internal server, stole a salary spreadsheet over FTP and sent data out through DNS. I rebuilt the attack chain from the timeline, extracted the indicators, mapped the techniques to MITRE ATT&CK and wrote the containment plan.
 
-Result: 86 percent (grade A). Full write-up in [the project folder](section-12-capstone-operation-midnight-invoice/README.md).
+Result: 80 percent (grade B+). Full write-up in [the project folder](section-12-capstone-operation-midnight-invoice/README.md).
 
 ## How each section is organised
 
@@ -167,6 +180,3 @@ http.user_agent contains "Python"
 - Getting the sender of a packet wrong (the SMB reset in the capstone)
 - Not knowing the switch-level defences (DHCP snooping)
 
-## What is next
-
-Next module: switching, VLANs, routing, NAT, firewalls and ACLs. Then I will redo the weak areas above with real pcaps from public practice sites.
