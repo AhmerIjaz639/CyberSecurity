@@ -38,8 +38,8 @@ covering offensive and defensive security.
 
 | # | Project | Skills | Status |
 |---|---------|--------|--------|
-| 01 | [🖥️ Personal Cyber Lab Setup](./01-cyber-lab-setup/) | VMware, Kali Linux, Virtualization | ✅ Complete |
-| 02 | [📊 Bash System Monitor](./02-Linux/Module_project/) | Bash, Linux, Automation | ✅ Complete |
+| 01 | [ Personal Cyber Lab Setup](./01-cyber-lab-setup/) | VMware, Kali Linux, Virtualization | ✅ Complete |
+| 02 | [ Bash System Monitor](./02-Linux/Module_project/) | Bash, Linux, Automation | ✅ Complete |
 | 03 | PowerShell Audit Tool | PowerShell, Windows | ⏳ Upcoming |
 | 04 | Python Network Scanner | Python, Networking | ⏳ Upcoming |
 | 05 | Web Security Audit | Burp Suite, OWASP | ⏳ Upcoming |

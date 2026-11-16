@@ -32,9 +32,7 @@ soc-analyst-journey/
 
 Each week contains:
 - `notes/` — Concept explanations and study material
-- `labs/` — Hands-on lab documentation with steps and findings
 - `scripts/` — Bash and Python automation scripts (Week 2 onward)
-- `screenshots/` — Evidence and output captures
 
 ## Tools Used
 
@@ -48,7 +46,7 @@ Each week contains:
 
 ## How to Navigate
 
-Start from `week-1-networking/README.md` and follow the daily progression. Each lab includes objectives, topology, steps taken, findings, and lessons learned.
+Start from `week1_networking/README.md` and follow the daily progression. Each lab includes objectives, topology, steps taken, findings, and lessons learned.
 
 ## Goal
 
