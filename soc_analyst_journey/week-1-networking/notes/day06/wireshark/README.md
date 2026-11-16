@@ -15,7 +15,7 @@ Scores are the ratings I got in my practice reviews, rounded. They show where I 
 
 | # | Section | Score | Status |
 |---|---------|-------|--------|
-| 1 | [Wireshark Fundamentals](section-01-fundamentals/README.md) | Not scored | Done |
+| 1 | [Wireshark Fundamentals](section-01-fundamentals/README.md) | 90 | Done |
 | 2 | [Capture and Display Filters](section-02-filters/README.md) | 85 | Done |
 | 3 | [DNS Analysis](section-03-dns/README.md) | 75 | Done |
 | 4 | [HTTP Analysis](section-04-http/README.md) | 83 | Done |
