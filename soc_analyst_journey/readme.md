@@ -6,7 +6,7 @@ A structured 4-week bootcamp documenting my path from CCNA-certified network eng
 
 - CCNA Certified (200-301)
 - Linux experience (Kali, Ubuntu)
-- Bash scripting (project-based)
+- Bash scripting (project-based)-- Learning 
 - Python (OOP, basic ML)
 - Currently building practical SOC skills
 
