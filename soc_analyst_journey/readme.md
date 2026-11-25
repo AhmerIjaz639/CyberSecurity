@@ -20,11 +20,11 @@ A structured 4-week bootcamp documenting my path from CCNA-certified network eng
 | 4 | Incident Response and Capstone | IR Lifecycle, Alert Triage, PCAP Investigation, Final Report | Not Started |
 
 ## Repository Structure
-soc-analyst-journey/
-├── week-1-networking/ # TCP/IP, DNS, HTTP, Wireshark, ACLs 
-├── week-2-siem-detection/ # Splunk, Logs, Detection Rules, Threat Hunting
-├── week-3-ir-capstone/ # Incident Response, PCAP Forensics, Final Project
-└── tools/ # Cheatsheets, filter references, install guides
+# soc-analyst-journey/
+├── - week-1-networking/ # TCP/IP, DNS, HTTP, Wireshark, ACLs 
+├── - week-2-siem-detection/ # Splunk, Logs, Detection Rules, Threat Hunting
+├── - week-3-ir-capstone/ # Incident Response, PCAP Forensics, Final Project
+└── - tools/ # Cheatsheets, filter references, install guides
 
 
 
