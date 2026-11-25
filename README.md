@@ -53,11 +53,11 @@ covering offensive and defensive security.
 ---
 
 ## 📈 Progress Tracker
-Phase 1 — Foundations : ██░░░░░░░░ 70% 🔄
-Phase 2 — Core Skills : ░░░░░░░░░░ 0% ⏳
+Phase 1 — Foundations : █████████░░ 90% 🔄
+Phase 2 — Core Skills : █░░░░░░░░░░ 10% ⏳
 Phase 3 — Offense/Defense : ░░░░░░░░░░ 0% ⏳
 Phase 4 — Advanced : ░░░░░░░░░░ 0% ⏳
-Phase 5 — Job Ready : ░░░░░░░░░░ 0% ⏳
+Phase 5 — Job Ready : ██░░░░░░░ 40% ⏳
 
 
 
@@ -65,14 +65,6 @@ Phase 5 — Job Ready : ░░░░░░░░░░ 0% ⏳
 ---
 
 
----
-
-## 📚 Platforms
-
-[![TryHackMe](https://img.shields.io/badge/TryHackMe-212C42?style=flat&logo=tryhackme&logoColor=white)](https://tryhackme.com/p/yourusername)
-[![HackTheBox](https://img.shields.io/badge/HackTheBox-9FEF00?style=flat&logo=hackthebox&logoColor=black)](https://hackthebox.com)
-
----
 
 ## 📬 Contact
 
