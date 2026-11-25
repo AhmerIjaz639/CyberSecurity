@@ -14,7 +14,7 @@ A 7-day intensive sprint covering networking fundamentals from a SOC analyst per
 
 ## Daily Breakdown
 
-| Day | Topic | Key Skills | Lab |
+| Day| Topic | Key Skills | Lab |
 |-----|-------|-----------|-----|
 | 1 | OSI Model, TCP/IP, Network Devices | Layer identification, device roles | Linux network commands, interface analysis |
 | 2 | TCP vs UDP, Subnetting, Ports | 3-way handshake, TCP flags, CIDR math | Subnetting drill, `ss` analysis |
